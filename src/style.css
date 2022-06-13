@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+}
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+}
+
+.navButton {
+    margin: 2em
+}
