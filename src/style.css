@@ -12,3 +12,26 @@ h1 {
 .navButton {
     margin: 2em
 }
+
+.body {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer > ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.footer > ul > li {
+    margin: .5em;
+}
