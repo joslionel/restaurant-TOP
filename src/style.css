@@ -1,20 +1,54 @@
+@font-face {
+    font-family: copperplate-bold;
+    src: url('./assets/copperplate-bold.otf');
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 h1 {
-    color: red;
+    color: #48487f;
+    font-family: copperplate-bold, serif;
+}
+#content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 75vw;
 }
 
 .navBar {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    background-color: brown;
 }
 
-    .navButton {
-        margin: 2em
+    .navHeader {
+        
+        color: #48487f;
+        font-family: copperplate-bold, serif;
+        
     }
 
-    .inactive {
-        background-color: grey;
+    .navElement {
+        display: flex;
+        
+    }
+
+    .navButton {
+        margin-left: 1em;   
+        border: none;
+        border-radius: .5em;
+        padding: 0.25em 1em 0.25em 1em;
+        background-color: #26726d;
+        
+        font-weight: bolder;
+    }
+
+    .active {
+        background-color: #46c0c1;
     }
 
 .body {
@@ -22,7 +56,11 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.image {
+    width: 100%;
 }
 
 .footer {
@@ -40,4 +78,9 @@ h1 {
 
 .footer > ul > li {
     margin: .5em;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

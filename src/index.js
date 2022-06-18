@@ -26,13 +26,18 @@ createHomeContent()
 const addButtons = (function () {
     const navButtons = document.querySelectorAll('.navButton')
     navButtons.forEach(button => {button.addEventListener('click', event => clickMe(event))})
-
+    
 })()
 
 
 function clickMe(e) {
+    const navButtons = document.querySelectorAll('.navButton')
+    navButtons.forEach(button => {button.classList.remove('active')})
+    const clicked = document.getElementById(`${e.target.id}`)
+    clicked.classList.add('active')
     switch (e.target.id) {
         case 'menuButton':
+            
             createMenuContent();
             break;
 

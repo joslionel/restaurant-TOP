@@ -36,6 +36,7 @@ const createHomeContent = () => {
 
     const bannerImage = document.createElement('img');
     bannerImage.src = headerImage;
+    bannerImage.classList.add('image')
     bodyContainer.appendChild(bannerImage)
 
     const paragraph = document.createElement('p');
@@ -52,9 +53,55 @@ const createMenuContent = () => {
 
     const bodyContainer = document.querySelector('.body');
 
+    const heading = document.createElement('h1');
+    heading.textContent = 'Menu';
+
+    const breakfastHeading = document.createElement('h2');
+    breakfastHeading.textContent = 'Breakfast Bites'
+
+    const sidesHeading = document.createElement('h2');
+    sidesHeading.textContent = 'Sides';
+    
+    const mainMealsHeading = document.createElement('h2');
+    mainMealsHeading.textContent = 'Main Meals';
+
+    const drinksMenuHeading = document.createElement('h2');
+    drinksMenuHeading.textContent = 'Hot & Cold Drinks';
+
+    
+    const brekContainer = document.createElement('div');
+    brekContainer.appendChild(breakfastHeading);
+
+    const mealContainer = document.createElement('div');
+    mealContainer.appendChild(mainMealsHeading);
+
+    const sidesContainer = document.createElement('div');
+    sidesContainer.appendChild(sidesHeading);
+
+    const drinksContainer = document.createElement('div');
+    drinksContainer.appendChild(drinksMenuHeading);
+    
+    const topMenuRow = document.createElement('div');
+    topMenuRow.classList.add('row');
+
+    const bottomMenuRow = document.createElement('div');
+    bottomMenuRow.classList.add('row');
+
+    topMenuRow.appendChild(brekContainer);
+    topMenuRow.appendChild(mealContainer);
+
+    bottomMenuRow.appendChild(sidesContainer);
+    bottomMenuRow.appendChild(drinksContainer);
+
+    bodyContainer.appendChild(heading);
+    bodyContainer.appendChild(topMenuRow);
+    bodyContainer.appendChild(bottomMenuRow);
+
     const paragraph = document.createElement('p');
     paragraph.textContent = `This is a menu`;
     bodyContainer.appendChild(paragraph);
+
+    return bodyContainer
 }
 
 const createContactContent = () => {
