@@ -1,6 +1,6 @@
 import './style.css';   
 import createHeader from './header';
-import createBody from './body';
+import { createBody, createContactContent, createHomeContent, createMenuContent } from "./body";
 import createFooter from './footer';
 
 
@@ -10,11 +10,44 @@ function containerMaker () {
 
     container.appendChild(createHeader())
 
-    container.appendChild(createBody('wassup'))
+    container.appendChild(createBody())
 
     container.appendChild(createFooter())
+
+    
 
     return container
 }
 
 document.body.appendChild(containerMaker())
+
+createHomeContent()
+
+const addButtons = (function () {
+    const navButtons = document.querySelectorAll('.navButton')
+    navButtons.forEach(button => {button.addEventListener('click', event => clickMe(event))})
+
+})()
+
+
+function clickMe(e) {
+    switch (e.target.id) {
+        case 'menuButton':
+            createMenuContent();
+            break;
+
+        case 'homeButton':
+            createHomeContent();
+            break;
+    
+        case 'contactButton':
+            createContactContent();
+            break;
+
+        default:
+            break;
+    }
+    
+}
+ 
+

@@ -9,12 +9,18 @@ h1 {
     background-color: brown;
 }
 
-.navButton {
-    margin: 2em
-}
+    .navButton {
+        margin: 2em
+    }
+
+    .inactive {
+        background-color: grey;
+    }
 
 .body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     border: 1px solid black;
 }
