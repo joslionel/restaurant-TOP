@@ -1,9 +1,9 @@
 import headerImage from "./images/header-platter.jpg";
+import Sides from './assets/Sides.csv';
+import MainMeals from "./assets/MainMeals.csv";
+import Drinks from './assets/Drinks.csv';
+import Breakfasts from './assets/Breakfast.csv';
 
-// TODO - clear body should clear inner html from body container. a separate function should probably
-//  create the body container, and a second function(s) should add content to that container
-// this way I can clear the ontent from the body and leave the container
-// 
 
 const clearBody = () => {
     const bodyContainer = document.querySelector('.body');
@@ -51,6 +51,8 @@ const createMenuContent = () => {
 
     clearBody()
 
+    
+
     const bodyContainer = document.querySelector('.body');
 
     const heading = document.createElement('h1');
@@ -77,6 +79,23 @@ const createMenuContent = () => {
 
     const sidesContainer = document.createElement('div');
     sidesContainer.appendChild(sidesHeading);
+
+    Sides.forEach(side => {
+        const itemContainer = document.createElement('div')
+        itemContainer.classList.add('menuRow');
+        const item = document.createElement('p');
+        item.classList.add('menuItem');
+        item.innerText = side[0].toLowerCase();
+        const desc = document.createElement('p');
+        desc.innerText = side[1].toLowerCase();
+        desc.classList.add('menuItem');
+        const price = document.createElement('p');
+        price.innerText = side[2];
+        price.classList.add('menuItem');
+        itemContainer.append(item, desc, price);
+        sidesContainer.append(itemContainer)
+
+    });
 
     const drinksContainer = document.createElement('div');
     drinksContainer.appendChild(drinksMenuHeading);

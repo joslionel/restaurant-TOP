@@ -27,6 +27,14 @@ module.exports = {
         test: /\.(png|jpg|svg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(ttf|otf|woff|woff2|eot)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(csv)$/i,
+        use: ['csv-loader'],
+      },
     ],
   },
 };

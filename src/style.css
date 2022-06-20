@@ -84,3 +84,12 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.menuRow {
+    display: flex;
+    gap: 1em;
+}
+
+.menuItem {
+    text-transform: capitalize;
+}
