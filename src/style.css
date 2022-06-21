@@ -86,7 +86,8 @@ h1 {
 }
 
 .menuRow {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
     gap: 1em;
 }
 

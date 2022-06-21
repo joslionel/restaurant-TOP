@@ -74,8 +74,42 @@ const createMenuContent = () => {
     const brekContainer = document.createElement('div');
     brekContainer.appendChild(breakfastHeading);
 
+    Breakfasts.forEach(brek => {
+        const itemContainer = document.createElement('div')
+        itemContainer.classList.add('menuRow');
+        const item = document.createElement('p');
+        item.classList.add('menuItem');
+        item.innerText = brek[0].toLowerCase();
+        const desc = document.createElement('p');
+        desc.innerText = brek[1].toLowerCase();
+        desc.classList.add('menuItem');
+        const price = document.createElement('p');
+        price.innerText = brek[2];
+        price.classList.add('menuItem');
+        itemContainer.append(item, desc, price);
+        brekContainer.append(itemContainer)
+
+    });
+
     const mealContainer = document.createElement('div');
     mealContainer.appendChild(mainMealsHeading);
+
+    MainMeals.forEach(main => {
+        const itemContainer = document.createElement('div')
+        itemContainer.classList.add('menuRow');
+        const item = document.createElement('p');
+        item.classList.add('menuItem');
+        item.innerText = main[0].toLowerCase();
+        const desc = document.createElement('p');
+        desc.innerText = main[1].toLowerCase();
+        desc.classList.add('menuItem');
+        const price = document.createElement('p');
+        price.innerText = main[2];
+        price.classList.add('menuItem');
+        itemContainer.append(item, desc, price);
+        mealContainer.append(itemContainer)
+
+    });
 
     const sidesContainer = document.createElement('div');
     sidesContainer.appendChild(sidesHeading);
@@ -99,6 +133,20 @@ const createMenuContent = () => {
 
     const drinksContainer = document.createElement('div');
     drinksContainer.appendChild(drinksMenuHeading);
+
+    Drinks.forEach(drink => {
+        const itemContainer = document.createElement('div')
+        itemContainer.classList.add('menuRow');
+        const item = document.createElement('p');
+        item.classList.add('menuItem');
+        item.innerText = drink[0].toLowerCase();
+        const price = document.createElement('p');
+        price.innerText = drink[1];
+        price.classList.add('menuItem');
+        itemContainer.append(item, price);
+        drinksContainer.append(itemContainer)
+
+    });
     
     const topMenuRow = document.createElement('div');
     topMenuRow.classList.add('row');
@@ -116,10 +164,7 @@ const createMenuContent = () => {
     bodyContainer.appendChild(topMenuRow);
     bodyContainer.appendChild(bottomMenuRow);
 
-    const paragraph = document.createElement('p');
-    paragraph.textContent = `This is a menu`;
-    bodyContainer.appendChild(paragraph);
-
+    
     return bodyContainer
 }
 
