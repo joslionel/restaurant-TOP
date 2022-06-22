@@ -41,8 +41,15 @@ const createHomeContent = () => {
 
     const paragraph = document.createElement('p');
     paragraph.textContent = `
-    Mikey's is a family run cafe. Proud to be serving delicious, fresh Homemade Breakfasts, Lunches, Snacks & refreshments. Using local produce & suppliers.`;
+    Mikey's is a family run cafe. Proud to be serving delicious, fresh Homemade Breakfasts, 
+    Lunches, Snacks & refreshments. Using local produce & suppliers.`;
     bodyContainer.appendChild(paragraph);
+
+    const paragraph2 = document.createElement('p');
+    paragraph2.innerHTML = `
+    You may see a sampling of our menu by clicking the link above. To get in touch
+    please call or email! We look forward to serving you.`;
+    bodyContainer.appendChild(paragraph2);
 
     return bodyContainer;
 }
@@ -78,7 +85,7 @@ const createMenuContent = () => {
         const itemContainer = document.createElement('div')
         itemContainer.classList.add('menuRow');
         const item = document.createElement('p');
-        item.classList.add('menuItem');
+        item.classList.add('menuItem', 'bold');
         item.innerText = brek[0].toLowerCase();
         const desc = document.createElement('p');
         desc.innerText = brek[1].toLowerCase();
@@ -98,7 +105,7 @@ const createMenuContent = () => {
         const itemContainer = document.createElement('div')
         itemContainer.classList.add('menuRow');
         const item = document.createElement('p');
-        item.classList.add('menuItem');
+        item.classList.add('menuItem', 'bold');
         item.innerText = main[0].toLowerCase();
         const desc = document.createElement('p');
         desc.innerText = main[1].toLowerCase();
@@ -118,7 +125,7 @@ const createMenuContent = () => {
         const itemContainer = document.createElement('div')
         itemContainer.classList.add('menuRow');
         const item = document.createElement('p');
-        item.classList.add('menuItem');
+        item.classList.add('menuItem', 'bold');
         item.innerText = side[0].toLowerCase();
         const desc = document.createElement('p');
         desc.innerText = side[1].toLowerCase();
@@ -136,9 +143,9 @@ const createMenuContent = () => {
 
     Drinks.forEach(drink => {
         const itemContainer = document.createElement('div')
-        itemContainer.classList.add('menuRow');
+        itemContainer.classList.add('drinkRow');
         const item = document.createElement('p');
-        item.classList.add('menuItem');
+        item.classList.add('menuItem', 'bold');
         item.innerText = drink[0].toLowerCase();
         const price = document.createElement('p');
         price.innerText = drink[1];
@@ -157,12 +164,12 @@ const createMenuContent = () => {
     topMenuRow.appendChild(brekContainer);
     topMenuRow.appendChild(mealContainer);
 
-    bottomMenuRow.appendChild(sidesContainer);
-    bottomMenuRow.appendChild(drinksContainer);
+    topMenuRow.appendChild(sidesContainer);
+    topMenuRow.appendChild(drinksContainer);
 
     bodyContainer.appendChild(heading);
     bodyContainer.appendChild(topMenuRow);
-    bodyContainer.appendChild(bottomMenuRow);
+    // bodyContainer.appendChild(bottomMenuRow);
 
     
     return bodyContainer
@@ -174,9 +181,39 @@ const createContactContent = () => {
 
     const bodyContainer = document.querySelector('.body');
 
-    const paragraph = document.createElement('p');
-    paragraph.textContent = `This is a contact page`;
-    bodyContainer.appendChild(paragraph);
+    const contact = ['Mikey', 'mikey@mikeys.cafe', '01970 612 093']
+
+    const heading = document.createElement('h2');
+    heading.innerHTML = "Get in touch";
+
+    
+    const container = document.createElement('div')
+    container.classList.add('menuRow')
+
+    const header1 = document.createElement('p')
+    header1.classList.add('bold')
+    header1.innerHTML = 'Name';
+    const header2 = document.createElement('p')
+    header2.classList.add('bold')
+    header2.innerHTML = 'Email';
+    const header3 = document.createElement('p')
+    header3.classList.add('bold')
+    header3.innerHTML = 'Phone';
+
+    const name = document.createElement('p');
+    name.innerText = contact[0]
+    const email = document.createElement('a');
+    email.href = `mailto:${contact[1]}`
+    email.innerText = contact[1]
+    const phone = document.createElement('p');
+    phone.innerText = contact[2]
+
+    
+
+    container.append(header1, header2, header3, name, email, phone)
+
+    bodyContainer.append(heading)
+    bodyContainer.append(container)
 }
 
 export { createBody, createHomeContent, createMenuContent, createContactContent };
